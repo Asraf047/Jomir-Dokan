@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_marker_view"
+    android:layout_width="52dp"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_dp"
+        android:layout_width="34dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="3.4dp"
+        android:layout_marginTop="0.0dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        app:civ_border_width="0dp"
+        app:civ_border_color="@color/white"
+        android:src="@drawable/avatar2" />
+
+    <RelativeLayout
+        android:layout_marginTop="1.0dp"
+        android:layout_width="41dp"
+        android:layout_height="41.5dp"
+        android:backgroundTint="#ffffff"
+        android:background="@drawable/marker_image4">
+
+        <TextView
+            android:visibility="gone"
+            android:text="Unnamed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:textSize="7sp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="#000"
+            android:alpha="0.8"
+            android:background="@drawable/blur_circle"
+            android:id="@+id/name" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

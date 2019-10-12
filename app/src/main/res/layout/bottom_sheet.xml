@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="156dp"
+    android:elevation="30dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="30dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:elevation="2dp"
+        android:layout_gravity="center_vertical"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:layout_weight="2"
+            android:text="Land Details"
+            android:textColor="#444"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="0dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:text="$435,00"/>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/text_add1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:layout_weight="2"
+            android:text="Add Details"
+            android:textColor="#444"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/text_add2"
+            android:layout_width="0dp"
+            android:gravity="right"
+            android:background="@null"
+            android:textAllCaps="false"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:textSize="16dp"
+            android:text="Cancel"/>
+
+    </LinearLayout>
+
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/toolbar_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/toolbar_dropshadow" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..." />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..." />
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..." />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/text6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..." />
+
+        <TextView
+            android:id="@+id/text10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:layout_marginBottom="3dp"
+            android:textColor="#444"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading..." />
+
+    <TextView
+        android:id="@+id/text7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="3dp"
+        android:text="Address"
+        android:textColor="#444"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..." />
+
+        <TextView
+            android:id="@+id/text11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="3dp"
+            android:text="Property Overview"
+            android:textColor="#444"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:text="Loading..." />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:elevation="2dp"
+        android:layout_gravity="center_vertical"
+        android:weightSum="2">
+
+        <android.support.design.widget.TextInputLayout
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:id="@+id/Price"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/Price1"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price" />
+        </android.support.design.widget.TextInputLayout>
+
+        <NumberPicker
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/numberPicker2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:theme="@style/NumberPicker"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+
+    </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:visibility="gone"
+            android:id="@+id/deail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/deail1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Property Overview" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#000"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="PROCEED CALL"
+        android:textColor="#fff" />
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/button_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="#000"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Add"
+            android:textColor="#fff" />
+
+        </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,611 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="20dp"
+    tools:context=".MapsActivity">
+
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/activityCatalogSearchContainer"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_gravity="start"
+        app:cardBackgroundColor="#ffffff"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginLeft="18dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="15dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless">
+
+        <android.support.v7.widget.SearchView
+            android:visibility="gone"
+            android:id="@+id/activityCatalogSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#ffffff"
+            android:queryHint="Go Somewhere"
+            android:iconifiedByDefault="false"/>
+
+        <ImageButton
+            android:id="@+id/search_image"
+            android:background="@drawable/nag"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="20dp"
+            android:layout_height="15dp"/>
+
+        <TextView
+            android:id="@+id/search1"
+            android:layout_gravity="center_vertical"
+            android:text="Where to?"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:ellipsize="none"
+            android:scrollbars="horizontal"
+            android:textColor="@color/bg_register"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/add"
+        android:background="@drawable/drawable_bg"
+        android:layout_gravity="right"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="95dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text=""/>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/clean"
+        android:layout_gravity="right"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="105dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clean"/>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/left"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="left"/>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/right"
+        android:onClick="markerRight"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="right"/>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/up"
+        android:onClick="markerUp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="up"/>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/down"
+        android:onClick="markerDown"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="down"/>
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/name"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:hint="Type"/>
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/price"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:hint="Price"/>
+
+    <ImageButton
+        android:visibility="gone"
+        android:id="@+id/layer1"
+        android:layout_gravity="right|bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wmc" />
+
+    <ImageButton
+        android:id="@+id/layer2"
+        android:layout_gravity="right|bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/lc" />
+
+    <ImageButton
+        android:visibility="gone"
+        android:id="@+id/center"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:background="@drawable/pinc5" />
+
+
+    <ImageButton
+        android:visibility="gone"
+        android:id="@+id/view1"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="100dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:elevation="10dp"
+        android:background="@drawable/traficimg" />
+
+    <ImageButton
+        android:visibility="gone"
+        android:id="@+id/view2"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="97dp"
+        android:layout_marginRight="12dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:elevation="10dp"
+        android:background="@drawable/setlightimg" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/photo"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="200dp"
+        android:layout_marginRight="12dp"
+        android:scaleType="centerCrop"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/ws" />
+
+    <ImageButton
+        android:visibility="gone"
+        android:id="@+id/locate"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="240dp"
+        android:layout_marginRight="12dp"
+        android:scaleType="centerCrop"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/l2" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_type1"
+        app:fabSize="mini"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/traficimg"
+        app:maxImageSize="40dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="right|bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="136dp"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/fab_type2"
+        app:fabSize="mini"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/setlightimg"
+        app:maxImageSize="40dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="right|bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="136dp"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_locate"
+        app:fabSize="mini"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/ic_my_location_black_24dp"
+        app:maxImageSize="20dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="right|bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="66dp"
+        android:scaleType="center"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/fab_marker"
+        app:fabSize="mini"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/m1"
+        app:maxImageSize="25dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="right|bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="276dp"
+        android:scaleType="center"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+
+
+    <android.support.v7.widget.CardView
+        android:visibility="gone"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:elevation="30dp"
+        app:pressedTranslationZ="12dp"
+        android:layout_gravity="right|bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="286dp"
+        app:cardCornerRadius="21dp">
+
+        <ImageView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@drawable/traficimg" />
+    </android.support.v7.widget.CardView>
+
+    <ImageButton
+        android:visibility="gone"
+        android:id="@+id/edit1"
+        android:layout_gravity="right|top"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/e1" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/left1"
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/left2"
+        app:maxImageSize="30dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="left|top"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="76dp"
+        android:scaleType="center"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/right1"
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/right2"
+        app:maxImageSize="30dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="left|top"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="76dp"
+        android:scaleType="center"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/up1"
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/up2"
+        app:maxImageSize="30dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="left|top"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="36dp"
+        android:scaleType="center"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/down1"
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/down2"
+        app:maxImageSize="30dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="left|top"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="116dp"
+        android:scaleType="center"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/clean1"
+        app:fabSize="mini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/right2"
+        app:maxImageSize="30dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/map"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="66dp"
+        android:layout_marginTop="76dp"
+        android:scaleType="center"
+        app:backgroundTint="#ffffff">
+    </android.support.design.widget.FloatingActionButton>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/layout_button_clean"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="130dp"
+        android:layout_marginTop="50dp"
+        android:weightSum="8"
+        android:elevation="10dp"
+        android:background="@drawable/round_corner"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_weight="2"
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_height="25dp"
+            android:contentDescription="clean"
+            android:src="@drawable/cl5" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/colorDivider" />
+        <Button
+            android:id="@+id/button_cl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_weight="6"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textColor="@color/bg_register"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:text="Clean" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/layout_button_detail"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:elevation="10dp"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="120dp"
+        android:weightSum="8"
+        android:background="@drawable/round_corner"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_weight="2"
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="2dp"
+            android:contentDescription="clean"
+            android:src="@drawable/e1" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/colorDivider" />
+        <Button
+            android:id="@+id/button_de"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_weight="6"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/bg_register"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:text="Detail" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/layout_button_cancel"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:elevation="10dp"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:weightSum="8"
+        android:background="@drawable/round_corner"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="horizontal">
+        <ImageView
+            android:padding="2dp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="2dp"
+            android:contentDescription="cancel"
+            android:src="@drawable/no" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/colorDivider" />
+        <Button
+            android:id="@+id/button_ca"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="3dp"
+            android:layout_weight="6"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/bg_register"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:text="Cancel" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/layout_button_undo"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:elevation="10dp"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="130dp"
+        android:layout_marginTop="120dp"
+        android:weightSum="8"
+        android:background="@drawable/round_corner"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="2dp"
+            android:contentDescription="undo"
+            android:src="@drawable/u1" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/colorDivider" />
+        <Button
+            android:id="@+id/button_un"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_weight="6"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/bg_register"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:text="Undo" />
+    </LinearLayout>
+
+</FrameLayout>

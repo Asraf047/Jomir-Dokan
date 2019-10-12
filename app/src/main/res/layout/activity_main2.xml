@@ -1,0 +1,198 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity4"
+    android:orientation="vertical">
+
+    <com.mxn.soul.flowingdrawer_core.FlowingDrawer
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:edPosition="1"
+        app:edMenuSize="260dp"
+        app:edMenuBackground="#dddddd">
+
+        <!--content-->
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                layout="@layout/activity_map4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- Adding bottom sheet after main content -->
+            <include layout="@layout/bottom_sheet" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <!--menu-->
+        <com.mxn.soul.flowingdrawer_core.FlowingMenuLayout
+            android:id="@+id/menulayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/id_container_menu"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:layout_marginTop="20dp"
+                    layout="@layout/nav_header_main"
+                    android:layout_width="350dp"
+                    android:layout_height="220dp" />
+
+                <Button
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:id="@+id/b0"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@null"
+                    android:text="Add"
+                    android:textAllCaps="false"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                    android:drawablePadding="@dimen/nav_header_vertical_spacing"
+                    android:drawableLeft="@drawable/ic_playlist_add_black_24dp"
+                    android:textColor="@color/title_text_color"
+                    android:textSize="@dimen/toolbar_text_size"
+                    tools:targetApi="lollipop" />
+
+                <Button
+                    android:id="@+id/b1"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@null"
+                    android:text="Search"
+                    android:textAllCaps="false"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                    android:drawablePadding="@dimen/nav_header_vertical_spacing"
+                    android:drawableLeft="@drawable/ic_location_searching_black_24dp"
+                    android:textColor="@color/title_text_color"
+                    android:textSize="@dimen/toolbar_text_size"
+                    tools:targetApi="lollipop" />
+
+                <Button
+                    android:id="@+id/b4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/nav_header_vertical_spacing"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                    android:text="My Lands"
+                    android:drawableLeft="@drawable/ic_pan_tool_black_24dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/title_text_color"
+                    android:textSize="@dimen/toolbar_text_size"
+                    tools:targetApi="lollipop" />
+
+                <Button
+                    android:id="@+id/b2"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@null"
+                    android:text="Profile"
+                    android:drawableLeft="@drawable/ic_payment_black_24dp"
+                    android:textAllCaps="false"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                    android:drawablePadding="@dimen/nav_header_vertical_spacing"
+                    android:textColor="@color/title_text_color"
+                    android:textSize="@dimen/toolbar_text_size"
+                    tools:targetApi="lollipop" />
+                <Button
+                    android:id="@+id/b3"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@null"
+                    android:text="Sign in"
+                    android:drawableLeft="@drawable/ic_present_to_all_black_24dp"
+                    android:textAllCaps="false"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                    android:drawablePadding="@dimen/nav_header_vertical_spacing"
+                    android:textColor="@color/title_text_color"
+                    android:textSize="@dimen/toolbar_text_size"
+                    tools:targetApi="lollipop" />
+
+                <Button
+                    android:id="@+id/b5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/nav_header_vertical_spacing"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/nav_header_vertical_spacing"
+                    android:text="Help"
+                    android:drawableLeft="@drawable/ic_help_outline_black_24dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/title_text_color"
+                    android:textSize="@dimen/toolbar_text_size"
+                    tools:targetApi="lollipop" />
+
+                <!--<customfonts.MyTextView1-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="7dp"-->
+                    <!--android:text="Reside Menu Example"-->
+                    <!--android:textSize="@dimen/toolbar_text_size"-->
+                    <!--android:gravity="center"-->
+                    <!--android:textColor="@color/title_text_color"-->
+                    <!--android:layout_gravity="center"/>-->
+
+                <!--<customfonts.MyTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="7dp"-->
+                    <!--android:text="Reside Menu Example"-->
+                    <!--android:textSize="@dimen/toolbar_text_size"-->
+                    <!--android:gravity="center"-->
+                    <!--android:textColor="@color/title_text_color"-->
+                    <!--android:layout_gravity="center"/>-->
+
+                <!--<include-->
+                    <!--layout="@menu/activity_main_drawer"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent" />-->
+
+                <!--<ImageView-->
+                    <!--android:background="@drawable/multiabb"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content" />-->
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </com.mxn.soul.flowingdrawer_core.FlowingMenuLayout>
+
+    </com.mxn.soul.flowingdrawer_core.FlowingDrawer>
+
+</LinearLayout>
